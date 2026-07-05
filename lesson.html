@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora Learn | 1-сабақ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="navbar">
+  <div class="brand">
+    <div class="logo">N</div>
+    <div>
+      <h1>NEXORA</h1>
+      <p>Lesson Page</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Басты бет</a>
+    <a href="student.html">Оқушы</a>
+    <a href="teacher.html">Мұғалім</a>
+  </nav>
+</header>
+
+<main class="lesson-layout">
+
+  <section class="lesson-main">
+    <span class="badge blue">1-тоқсан · 1-сабақ</span>
+
+    <h1>Ақпарат дегеніміз не?</h1>
+
+    <div class="goal-card">
+      <b>Оқу мақсаты:</b>
+      <p>5.2.1.1 әртүрлі ақпараттың мысалдарын келтіру және ақпаратты әртүрлі нысандарда ұсыну.</p>
+    </div>
+
+    <div class="video-box">
+      ▶ Видео түсіндірме орны
+    </div>
+
+    <div class="content-card">
+      <h2>Қысқаша теория</h2>
+      <p>
+        Ақпарат — бізді қоршаған орта туралы мәлімет. Ақпарат мәтін, сурет,
+        дыбыс, бейне және сан түрінде берілуі мүмкін.
+      </p>
+    </div>
+
+    <div class="tasks">
+      <h2>Тапсырмалар</h2>
+
+      <div class="task-card">
+        <h3>👥 Топтық тапсырма — 3 ұпай</h3>
+        <p>Жағдаят: мектепте маңызды хабарландыру бар. Оны оқушыларға қалай тез жеткізер едіңдер?</p>
+      </div>
+
+      <div class="task-card">
+        <h3>🤝 Жұптық тапсырма — 3 ұпай</h3>
+        <p>Бір оқушы ақпарат көзі, екіншісі қабылдаушы болады. Ақпаратты дұрыс жеткізіңдер.</p>
+      </div>
+
+      <div class="task-card">
+        <h3>👤 Жеке тапсырма — 4 ұпай</h3>
+        <p>Ақпарат түрлерін таңда: мәтіндік, графикалық, дыбыстық, бейнелік.</p>
+
+        <label><input type="checkbox" class="score" value="1"> Мәтін ақпарат бола алады</label>
+        <label><input type="checkbox" class="score" value="1"> Сурет ақпарат бола алады</label>
+        <label><input type="checkbox" class="score" value="1"> Дыбыс ақпарат бола алады</label>
+        <label><input type="checkbox" class="score" value="1"> Бейне ақпарат бола алады</label>
+
+        <button onclick="calculateScore()" class="btn primary">Ұпайды есептеу</button>
+        <h3 id="resultScore">Ұпай: 0 / 10</h3>
+      </div>
+    </div>
+  </section>
+
+  <aside class="nexo-chat">
+    <div class="robot">🤖</div>
+    <h2>NEXO чат</h2>
+    <div id="chatBox" class="chat-box">
+      <div class="bot-msg">Сәлем! Мен NEXO. Осы сабақ бойынша сұрақ қой.</div>
+    </div>
+
+    <div class="chat-input">
+      <input id="userQuestion" type="text" placeholder="Сұрағыңды жаз...">
+      <button onclick="askNexo()">➤</button>
+    </div>
+  </aside>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
