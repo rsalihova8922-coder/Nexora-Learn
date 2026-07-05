@@ -1,62 +1,113 @@
-/* ======================================================
-   NEXORA LEARN
-   Version: 1.0 MVP
-====================================================== */
+console.log("🚀 Nexora Learn іске қосылды");
 
-console.log("🚀 Nexora Learn іске қосылды!");
+/* --------------------------
+   NEXO CHAT
+---------------------------*/
 
-const APP = {
+function askNexo() {
 
-    name: "Nexora Learn",
+    let input = document.getElementById("userQuestion");
 
-    version: "1.0",
+    let chat = document.getElementById("chatBox");
 
-    developer: "Raushan Salikhova",
+    if (!input || input.value.trim() === "") return;
 
-    ai: "NEXO"
+    let question = input.value;
 
-};
+    chat.innerHTML += `
+        <div class="user-msg">${question}</div>
+    `;
 
-// ----------------------
-// Navigation
-// ----------------------
+    let answer = "";
 
-function openStudent(){
+    let q = question.toLowerCase();
 
-    window.location.href="student.html";
+    if (q.includes("ақпарат")) {
+
+        answer = "Ақпарат — қоршаған орта туралы мәлімет. Ол мәтін, сурет, дыбыс және бейне түрінде беріледі.";
+
+    }
+
+    else if (q.includes("мысал")) {
+
+        answer = "Мысалы: кітап, музыка, сурет, бейнеролик.";
+
+    }
+
+    else if (q.includes("оқу мақсаты")) {
+
+        answer = "Бұл сабақтың оқу мақсаты: 5.2.1.1 Ақпараттың түрлерін ажырату.";
+
+    }
+
+    else {
+
+        answer = "Жақсы сұрақ 👍 Бұл туралы теория бөлімін қайта қарап көр. Қажет болса мұғалімнен сұра немесе келесі сұрағыңды нақтырақ жаз.";
+
+    }
+
+    setTimeout(function(){
+
+        chat.innerHTML += `
+            <div class="bot-msg">${answer}</div>
+        `;
+
+        chat.scrollTop = chat.scrollHeight;
+
+    },600);
+
+    input.value="";
 
 }
 
-function openTeacher(){
+/* --------------------------
+   ENTER
+---------------------------*/
 
-    window.location.href="teacher.html";
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        askNexo();
+
+    }
+
+});
+
+/* --------------------------
+   10 ҰПАЙЛЫҚ БАҒАЛАУ
+---------------------------*/
+
+function calculateScore(){
+
+    let score=0;
+
+    let checks=document.querySelectorAll(".score");
+
+    checks.forEach(function(item){
+
+        if(item.checked){
+
+            score++;
+
+        }
+
+    });
+
+    score=score+6;
+
+    if(score>10){
+
+        score=10;
+
+    }
+
+    document.getElementById("resultScore").innerHTML="Ұпай : "+score+" / 10";
+
+    if(score==10){
+
+        alert("🏆 Өте жақсы! Сен 10 ұпай жинадың!");
+
+    }
 
 }
-
-// ----------------------
-// NEXO
-// ----------------------
-
-function welcome(){
-
-    console.log("Сәлем! Мен NEXO AI 🤖");
-
-}
-
-welcome();
-
-// ----------------------
-// Future Modules
-// ----------------------
-
-const Lessons=[];
-
-const Tasks=[];
-
-const Progress=[];
-
-const Achievements=[];
-
-const ChatHistory=[];
-
-console.log(APP);
